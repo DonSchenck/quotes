@@ -175,7 +175,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="quote.cs">
+    <Compile Include="Quote.cs">
       <DependentUpon>Quotes.tt</DependentUpon>
     </Compile>
     <Compile Include="Quotes.Context.cs">

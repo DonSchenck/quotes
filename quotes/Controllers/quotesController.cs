@@ -18,16 +18,16 @@ namespace quotes.Controllers
         private QuotesContainer db = new QuotesContainer();
 
         // GET: api/quotes
-        public IQueryable<quote> Getquotes()
+        public IQueryable<Quote> Getquotes()
         {
-            return db.quotes;
+            return db.Quotes;
         }
 
         // GET: api/quotes/5
-        [ResponseType(typeof(quote))]
+        [ResponseType(typeof(Quote))]
         public async Task<IHttpActionResult> Getquote(int id)
         {
-            quote quote = await db.quotes.FindAsync(id);
+            Quote quote = await db.Quotes.FindAsync(id);
             if (quote == null)
             {
                 return NotFound();
@@ -38,7 +38,7 @@ namespace quotes.Controllers
 
         // PUT: api/quotes/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> Putquote(int id, quote quote)
+        public async Task<IHttpActionResult> Putquote(int id, Quote quote)
         {
             if (!ModelState.IsValid)
             {
@@ -72,31 +72,31 @@ namespace quotes.Controllers
         }
 
         // POST: api/quotes
-        [ResponseType(typeof(quote))]
-        public async Task<IHttpActionResult> Postquote(quote quote)
+        [ResponseType(typeof(Quote))]
+        public async Task<IHttpActionResult> Postquote(Quote quote)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.quotes.Add(quote);
+            db.Quotes.Add(quote);
             await db.SaveChangesAsync();
 
             return CreatedAtRoute("DefaultApi", new { id = quote.Id }, quote);
         }
 
         // DELETE: api/quotes/5
-        [ResponseType(typeof(quote))]
+        [ResponseType(typeof(Quote))]
         public async Task<IHttpActionResult> Deletequote(int id)
         {
-            quote quote = await db.quotes.FindAsync(id);
+            Quote quote = await db.Quotes.FindAsync(id);
             if (quote == null)
             {
                 return NotFound();
             }
 
-            db.quotes.Remove(quote);
+            db.Quotes.Remove(quote);
             await db.SaveChangesAsync();
 
             return Ok(quote);
@@ -113,7 +113,7 @@ namespace quotes.Controllers
 
         private bool quoteExists(int id)
         {
-            return db.quotes.Count(e => e.Id == id) > 0;
+            return db.Quotes.Count(e => e.Id == id) > 0;
         }
     }
 }

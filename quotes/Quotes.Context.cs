@@ -25,6 +25,6 @@ namespace quotes
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<quote> quotes { get; set; }
+        public virtual DbSet<Quote> Quotes { get; set; }
     }
 }

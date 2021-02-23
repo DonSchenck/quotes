@@ -12,9 +12,10 @@ namespace quotes
     using System;
     using System.Collections.Generic;
     
-    public partial class quote
+    public partial class Quote
     {
         public int Id { get; set; }
         public string QuoteText { get; set; }
+        public string Author { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\dschenck\source\repos\quotes\quotes\Quotes.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\dschenck\src\github\donschenck\quotes\quotes\Quotes.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
